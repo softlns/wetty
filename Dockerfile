@@ -12,4 +12,4 @@ RUN echo 'term:term' | chpasswd
 EXPOSE 3000
 
 ENTRYPOINT ["node"]
-CMD ["app.js", "-p", "3000"]
+CMD ["/app/entrypoint.sh"]
