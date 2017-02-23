@@ -109,7 +109,7 @@ io.on('connection', function(socket){
             rows: 30
         });
     } else {
-        term = pty.spawn('ssh', [sshuser + sshhost, '-p', sshport, '-o', 'PreferredAuthentications=' + sshauth], {
+        term = pty.spawn('ssh', [sshuser + sshhost, '-p', sshport, '-o', 'PreferredAuthentications=' + sshauth, '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no'], {
             name: 'xterm-256color',
             cols: 80,
             rows: 30

@@ -1,4 +1,4 @@
-FROM node:0.10.38
+FROM node:0.10
 MAINTAINER Nathan LeClaire <nathan@docker.com>
 
 ADD . /app
@@ -10,6 +10,6 @@ RUN useradd -d /home/term -m -s /bin/bash term
 RUN echo 'term:term' | chpasswd
 
 EXPOSE 3000
+USER term
 
-ENTRYPOINT ["node"]
-CMD ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
